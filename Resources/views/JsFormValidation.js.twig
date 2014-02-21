@@ -19,12 +19,12 @@ jsfv['{{ formName }}'] = new function () {
         Translator.placeHolderPrefix = '{{ '{{' }} ';
         Translator.placeHolderSuffix = ' {{ '}}' }}';
         // Default translations
-        if (!Translator.trans('{{ translation_group }}:'+key)) {
-            Translator.add('{{ translation_group }}:'+key, key);
+        if (!Translator.trans(key, {}, '{{ translation_group }}')) {
+            Translator.add(key, {}, '{{ translation_group }}');
         }
 
-        return Translator.trans('{{ translation_group }}:'+key, placeholders, number) ||
-               Translator.trans('{{ translation_group }}:'+key, placeholders);
+        return Translator.transChoice(key, number, placeholders, '{{ translation_group }}') ||
+               Translator.trans(key, placeholders, '{{ translation_group }}');
     }
 
     function isNotDefined(value) {
