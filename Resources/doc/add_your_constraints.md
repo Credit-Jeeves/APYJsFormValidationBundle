@@ -38,7 +38,7 @@ class User
     /**
      * Checks if password does not equal username
      *
-     * @Assert\True(groups={message = "Password should not match username.")
+     * @Assert\IsTrue(groups={message = "Password should not match username.")
      */
     public function isPasswordLegal ()
     {

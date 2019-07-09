@@ -60,7 +60,7 @@ class Product
 
 
     /**
-     * @Assert\True(message = "Password should not be the same as name.")
+     * @Assert\IsTrue(message = "Password should not be the same as name.")
      */
     public function isPasswordLegal()
     {
